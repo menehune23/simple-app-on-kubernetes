@@ -21,6 +21,8 @@ kind: Deployment
 metadata:
   namespace: #@ data.values.namespace
   name: simple-app-deployment
+  labels:
+    app.kubernetes.io/part-of: #@ data.values.component
 spec:
   selector:
     matchLabels: #@ labels()
